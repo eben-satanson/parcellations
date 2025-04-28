@@ -1,0 +1,94 @@
+#+title: README
+#+LATEX_CMD:   xelatex
+#+LATEX_CLASS: article
+
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt,onecolumn,oneside,openright]
+
+#+JIKO-CONFIG: use-minted
+#+JIKO-CONFIG: use-biblatex-apa7
+#+JIKO-CONFIG: use-hyperref-setup
+#+JIKO-CONFIG: use-threeparttable
+
+#+LATEX_HEADER_EXTRA: \addbibresource{~/cc/org/roam/refs/core/core-Base.bib}
+#+LATEX_HEADER_EXTRA: \addbibresource{base.bib}
+
+#+OPTIONS: author:nil
+#+OPTIONS: email:nil
+#+OPTIONS: date:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:{}
+
+* Notes
+- PDF and BIB files: file:./aux-refs/
+- Parcellations/annotations file:./aux-annots/fsaverage/label/
+- All parcellations transformed to =fsaverage=:
+  - =?h.aparc.annot=
+    - Desikan-Killiany Atlas parencite:&r2006PaperDesikanEtAlN2
+    - Available as a standard option in FreeSurfer/MNE distribution
+  - =?h.aparc_sub.annot=
+    - A more detailed version of the Desikan-Killiany Atlas
+      parencite:&r2006PaperDesikanEtAlN2
+    - Includes sub-parcellations based on
+      textcite:&r2018PaperKhanEtAlN2
+      - QUOTE: *Cortical parcellation (labels)* /FreeSurfer was
+        used to automatically divide the cortex into 72 regions/
+        parencite:&r1999PaperDaleEtAlN2. /After discarding “medial
+        wall” and “corpus callosum”, these regions were further
+        divided in to a total of N = 448 cortical “labels (Fig.
+        S4)”, so that each label covers a similar area again using
+        FreeSurfer. _We employed this high-resolution parcellation
+        scheme because cortical surface is very convoluted and
+        averaging across a large label, which crosses multiple
+        sulci and gyri, can result in signal cancellation across
+        the parcel_. Lastly, _a high-resolution parcellation also
+        reduces the dependence of the results on the specific
+        selection of the parcels_./
+    - NB: Recently used in textcite:&r2025PaperRuuskanenAvendano-DiazN1
+      - Sub-parcellations were methodologically justified in the
+        context of addressing the same problem we face
+      - QUOTE: *Cortical parcellation* /To decrease computational
+        complexity and increase interpretability, we employed a
+        cortical parcellation to reduce the dimensionality of the
+        source-space data. To that end, the data were organized
+        into 448 ROIs as defined in the aparc sub parcellation
+        scheme developed by Khan and colleagues
+        parencite:&r2018PaperKhanEtAlN2 based on the
+        Desikan–Killiany atlas/.
+      - QUOTE: /The time courses within each ROI were then
+        averaged to form a representative time series. To prevent
+        signal cancellation at the opposite sides of sulci, a
+        sign-flip operation was applied to the signals of the
+        sources whose orientation differed from the dominant
+        direction within the ROI by more than 90◦. The use of a
+        relatively dense parcellation further reduces signal
+        cancellation and flattening during the averaging
+        procedure/.
+      - [[file:aux-imgs/r2025PaperRuuskanenAvendano-DiazN1-img-0001.png]]
+      - BTW: ↓ Not a bad template for localization visualization (if
+        one adds a histogram to such circle).
+      - [[file:aux-imgs/r2025PaperRuuskanenAvendano-DiazN1-img-0002.png]]
+    - NB: Interesingly, both textcite:&r2018PaperKhanEtAlN2 and
+      textcite:&r2025PaperRuuskanenAvendano-DiazN1 relied on =?h.aparc_sub.annot=
+      to solve a problems very similar to the ones we
+      discossed today.
+    - =BTW: ?h.aparc_sub_FIXED.annot= contains manually corrected label strings.
+  - =?h.HCPMMP1.annot=
+    - From textcite:&r2016PaperGlasserEtAlN1
+    - A strong alternative candidate for consideration.
+    - =?h.HCPMMP1_ORIG.annot= is OK
+  - =?h.power.annot=
+    - From textcite:&r2011PaperPowerEtAlN2
+    - Not a preferred option for my taste (although, just in case,
+      please find it in the fsaverage space)
+    - This parcellation is highly non-uniform in parcel size; some
+      areas are very small, while others cover large cortical
+      surface regions (likely due to idiosyncratic data used, which
+      may reflect their specific dataset but is suboptimal for
+      exploring new data).
+* References
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+\addcontentsline{toc}{section}{References}
+
+\printbibliography[heading=none]

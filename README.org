@@ -83,7 +83,7 @@
     - This parcellation is highly non-uniform in parcel size; some
       areas are very small, while others cover large cortical
       surface regions (likely due to idiosyncratic data used, which
-      may reflect their specific dataset but is suboptimal for
+      may reflect their specific research constrains but is suboptimal for
       exploring new data).
 * References
 :PROPERTIES:
